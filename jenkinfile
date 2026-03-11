@@ -1,0 +1,16 @@
+pipeline{
+   agent any
+Stages{
+stages('clone'){
+ steps{
+  git url:'https://github.com/chayakruthi/jenkins_simple.git',
+  branch:'main'
+}
+}
+Stages('Run script'){
+steps{
+sh'chmod+xscript.sh'
+sh'.\script.sh'
+}
+}
+}
